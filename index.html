@@ -20,17 +20,32 @@
 <body class="bg-slate-50 font-sans">
 
 <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+        <a href="/index.html" class="flex items-center space-x-2 hover:opacity-80 transition z-50">
             <span class="text-2xl">🐾</span>
             <span class="font-bold text-xl tracking-tighter text-michi">MICHI CAFÉ</span>
         </a>
-        <div class="hidden md:flex space-x-8 font-medium text-gray-600">
+
+        <!-- Botón Hamburguesa (Visible en móvil) -->
+        <button id="menu-btn" class="block md:hidden focus:outline-none z-50 p-2">
+            <i class="fas fa-bars text-2xl text-michi"></i>
+        </button>
+
+        <!-- Menú Desktop -->
+        <div class="hidden md:flex space-x-8 font-medium text-gray-600 items-center">
             <a href="#experiencia" class="hover:text-michi transition">Experiencia</a>
-            <a href="menu.html" class="hover:text-michi transition">Nuestra Carta</a>
+            <a href="/menu.html" class="hover:text-michi transition">Nuestra Carta</a>
             <a href="#ubicacion" class="hover:text-michi transition">Visítanos</a>
+            <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">Comunidad Michi</a>
         </div>
-        <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">Comunidad Michi</a>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl font-medium text-gray-800 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <a href="#experiencia" class="hover:text-michi transition mobile-link">Experiencia</a>
+            <a href="/menu.html" class="hover:text-michi transition mobile-link">Nuestra Carta</a>
+            <a href="#ubicacion" class="hover:text-michi transition mobile-link">Visítanos</a>
+            <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition">Comunidad Michi</a>
+        </div>
     </div>
 </nav>
 
@@ -46,7 +61,7 @@
             Disfruta de granos de origen (San Ignacio y Jaén) en un ambiente diseñado para amantes de los gatos. Una experiencia pet-friendly única en Jr. Guillermo Urrelo.
         </p>
         <div class="mt-8 flex space-x-4">
-            <a href="menu.html" class="bg-michi border border-michi px-8 py-3 rounded-lg font-bold hover:bg-transparent hover:text-white transition inline-block">Ver Carta</a>
+            <a href="/menu.html" class="bg-michi border border-michi px-8 py-3 rounded-lg font-bold hover:bg-transparent hover:text-white transition inline-block">Ver Carta</a>
             <a href="#ubicacion" class="bg-white text-michi px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">Reservar Mesa</a>
         </div>
     </div>
@@ -126,6 +141,33 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-times text-2xl text-michi"></i>';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-bars text-2xl text-michi"></i>';
+        }
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            mobileMenu.classList.add('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-bars text-2xl text-michi"></i>';
+        });
+    });
+</script>
 
 </body>
 </html>

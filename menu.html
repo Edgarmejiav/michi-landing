@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michi Café | Café de Especialidad y Cultura Felina</title>
+    <meta name="description" content="Menú de Michi Café. Descubre nuestra variedad de cafés, postres y bebidas en un ambiente felino único en Cajamarca.">
+    <title>Nuestra Carta | Michi Café</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -13,100 +14,192 @@
         }
         .bg-michi { background-color: var(--michi-green); }
         .text-michi { color: var(--michi-green); }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans">
 
 <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+        <a href="/index.html" class="flex items-center space-x-2 hover:opacity-80 transition z-50">
             <span class="text-2xl">🐾</span>
             <span class="font-bold text-xl tracking-tighter text-michi">MICHI CAFÉ</span>
+        </a>
+
+        <!-- Botón Hamburguesa (Visible en móvil) -->
+        <button id="menu-btn" class="block md:hidden focus:outline-none z-50 p-2">
+            <i class="fas fa-bars text-2xl text-michi"></i>
+        </button>
+
+        <!-- Menú Desktop -->
+        <div class="hidden md:flex space-x-8 font-medium text-gray-600 items-center">
+            <a href="/index.html#experiencia" class="hover:text-michi transition">Experiencia</a>
+            <a href="/menu.html" class="text-michi font-bold">Nuestra Carta</a>
+            <a href="/index.html#ubicacion" class="hover:text-michi transition">Visítanos</a>
+            <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">Comunidad Michi</a>
         </div>
-        <div class="hidden md:flex space-x-8 font-medium text-gray-600">
-            <a href="#experiencia" class="hover:text-michi">Experiencia</a>
-            <a href="#carta" class="hover:text-michi">Nuestra Carta</a>
-            <a href="#ubicacion" class="hover:text-michi">Visítanos</a>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl font-medium text-gray-800 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <a href="/index.html#experiencia" class="hover:text-michi transition mobile-link">Experiencia</a>
+            <a href="/menu.html" class="text-michi font-bold mobile-link">Nuestra Carta</a>
+            <a href="/index.html#ubicacion" class="hover:text-michi transition mobile-link">Visítanos</a>
+            <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-6 py-3 rounded-full font-bold hover:scale-105 transition">Comunidad Michi</a>
         </div>
-        <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">Comunidad Michi</a>
     </div>
 </nav>
 
-<header class="relative h-[70vh] flex items-center overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1350&q=80"
-         class="absolute inset-0 w-full h-full object-cover" alt="Michi Cafe Cajamarca">
+<header class="relative h-[50vh] flex items-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80"
+         class="absolute inset-0 w-full h-full object-cover" alt="Carta Michi Cafe">
     <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
 
-    <div class="relative z-10 container mx-auto px-6 text-white">
-        <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Cajamarca • Café de Especialidad</span>
-        <h1 class="text-5xl md:text-7xl font-bold mt-4 leading-tight">Mucho más que <br><span class="text-yellow-400">solo café.</span></h1>
-        <p class="mt-6 text-lg md:text-xl max-w-xl text-gray-200">
-            Disfruta de granos de origen (San Ignacio y Jaén) en un ambiente diseñado para amantes de los gatos. Una experiencia pet-friendly única en Jr. Guillermo Urrelo.
+    <div class="relative z-10 container mx-auto px-6 text-white text-center">
+        <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Sabores Auténticos</span>
+        <h1 class="text-5xl md:text-6xl font-bold mt-4 leading-tight">Nuestra Carta</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-xl mx-auto text-gray-200">
+            Una selección especial de cafés de origen, bebidas refrescantes y postres hechos con amor.
         </p>
-        <div class="mt-8 flex space-x-4">
-            <button class="bg-michi border border-michi px-8 py-3 rounded-lg font-bold hover:bg-transparent transition">Ver Carta</button>
-            <button class="bg-white text-michi px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition text-center">Reservar Mesa</button>
-        </div>
     </div>
 </header>
 
-<section class="py-12 bg-white">
-    <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-            <p class="text-3xl font-bold text-michi">100%</p>
-            <p class="text-gray-500 text-sm italic">Grano de Origen</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold text-michi">+500</p>
-            <p class="text-gray-500 text-sm italic">Michi Lovers</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold text-michi">Pet</p>
-            <p class="text-gray-500 text-sm italic">Friendly</p>
-        </div>
-        <div>
-            <p class="text-3xl font-bold text-michi">Arte</p>
-            <p class="text-gray-500 text-sm italic">Latte en Vivo</p>
-        </div>
-    </div>
-</section>
-
-<section id="experiencia" class="py-20 bg-slate-50">
+<section id="carta" class="py-16 bg-white">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800">¿Por qué elegir Michi Café?</h2>
-            <div class="w-20 h-1 bg-michi mx-auto mt-4"></div>
+
+        <!-- Categoría: Cafés Calientes -->
+        <div class="mb-16">
+            <div class="flex items-center mb-8">
+                <div class="bg-michi text-white p-3 rounded-full mr-4">
+                    <i class="fas fa-mug-hot text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Cafés Calientes</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Espresso</h3>
+                        <p class="text-gray-500 text-sm">Intenso y puro. La esencia del café.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 6.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Americano</h3>
+                        <p class="text-gray-500 text-sm">Espresso diluido en agua caliente.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 7.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Cappuccino</h3>
+                        <p class="text-gray-500 text-sm">Espresso, leche vaporizada y espuma.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 9.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Mocaccino</h3>
+                        <p class="text-gray-500 text-sm">Espresso, chocolate y leche.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 10.00</span>
+                </div>
+                 <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Latte</h3>
+                        <p class="text-gray-500 text-sm">Espresso con abundante leche cremosa.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 9.00</span>
+                </div>
+                 <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Michi Especial</h3>
+                        <p class="text-gray-500 text-sm">Nuestra mezcla secreta con un toque de caramelo.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 12.00</span>
+                </div>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-michi hover:-translate-y-2 transition">
-                <div class="text-4xl mb-4">☕</div>
-                <h3 class="text-xl font-bold mb-3">Calidad Superior</h3>
-                <p class="text-gray-600">Bebidas con café que representan el 42% de nuestra preferencia. Usamos métodos de extracción artesanales.</p>
+        <!-- Categoría: Bebidas Frías -->
+        <div class="mb-16">
+            <div class="flex items-center mb-8">
+                <div class="bg-yellow-500 text-white p-3 rounded-full mr-4">
+                    <i class="fas fa-glass-whiskey text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Bebidas Frías</h2>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-yellow-500 hover:-translate-y-2 transition">
-                <div class="text-4xl mb-4">🐱</div>
-                <h3 class="text-xl font-bold mb-3">Temática Felina</h3>
-                <p class="text-gray-600">Un espacio lúdico y acogedor. Nuestra identidad "Michi" conecta emocionalmente contigo.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-michi hover:-translate-y-2 transition">
-                <div class="text-4xl mb-4">🍰</div>
-                <h3 class="text-xl font-bold mb-3">Dulces Artesanales</h3>
-                <p class="text-gray-600">Postres frescos elaborados con ingredientes locales para acompañar tu momento de relax.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Iced Latte</h3>
+                        <p class="text-gray-500 text-sm">Refrescante café con leche y hielo.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 10.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Frappuccino</h3>
+                        <p class="text-gray-500 text-sm">Café helado batido con crema.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 12.00</span>
+                </div>
+                 <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Limonada Frozen</h3>
+                        <p class="text-gray-500 text-sm">Clásica o con hierbabuena.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 8.00</span>
+                </div>
+                 <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Milkshake de Oreo</h3>
+                        <p class="text-gray-500 text-sm">Batido cremoso con galletas Oreo.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 13.00</span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="py-20 bg-michi text-white overflow-hidden relative">
-    <div class="container mx-auto px-6 text-center relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Quieres ser parte de nuestra comunidad?</h2>
-        <p class="text-green-100 mb-10 max-w-lg mx-auto">Síguenos en redes sociales para no perderte nuestros talleres de café y eventos culturales.</p>
-        <div class="flex justify-center space-x-6 text-3xl">
-            <a href="https://www.facebook.com/michicafes" class="hover:text-yellow-400"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/michicafes" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@michicafes" class="hover:text-yellow-400"><i class="fab fa-tiktok"></i></a>
+        <!-- Categoría: Postres -->
+        <div>
+            <div class="flex items-center mb-8">
+                <div class="bg-michi text-white p-3 rounded-full mr-4">
+                    <i class="fas fa-birthday-cake text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Postres</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Cheesecake de Maracuyá</h3>
+                        <p class="text-gray-500 text-sm">Suave y con el toque ácido perfecto.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 10.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Torta de Chocolate</h3>
+                        <p class="text-gray-500 text-sm">Húmeda y con abundante fudge.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 11.00</span>
+                </div>
+                <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Pie de Limón</h3>
+                        <p class="text-gray-500 text-sm">Clásico postre con merengue.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 9.00</span>
+                </div>
+                 <div class="flex justify-between items-start border-b border-gray-100 pb-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">Galletas Michi</h3>
+                        <p class="text-gray-500 text-sm">Galletas de mantequilla con forma de gato.</p>
+                    </div>
+                    <span class="font-bold text-michi">S/ 3.00</span>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -124,6 +217,33 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-times text-2xl text-michi"></i>';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-bars text-2xl text-michi"></i>';
+        }
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            mobileMenu.classList.add('translate-x-full');
+            menuBtn.innerHTML = '<i class="fas fa-bars text-2xl text-michi"></i>';
+        });
+    });
+</script>
 
 </body>
 </html>

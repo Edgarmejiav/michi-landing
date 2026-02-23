@@ -113,14 +113,14 @@ class MichiProductCard extends HTMLElement {
         const encodedWhatsapp = encodeURIComponent(whatsapp);
 
         this.innerHTML = `
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition group" data-aos="fade-up">
-            <div class="h-64 bg-gray-200 relative overflow-hidden">
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition group h-full flex flex-col" data-aos="fade-up">
+            <div class="h-64 bg-gray-200 relative overflow-hidden flex-shrink-0">
                 <img src="${image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${title}" loading="lazy">
             </div>
-            <div class="p-8">
+            <div class="p-8 flex flex-col flex-grow">
                 <h3 class="text-xl font-bold mb-2 text-[#221518]">${title}</h3>
-                <p class="text-[#54372B] mb-4">${description}</p>
-                <div class="flex justify-between items-center">
+                <p class="text-[#54372B] mb-4 line-clamp-3 flex-grow">${description}</p>
+                <div class="flex justify-between items-center mt-auto">
                     <a href="/menu.html" class="text-michi font-bold hover:underline text-sm">Ver en carta →</a>
                     <a href="https://wa.me/51976622179?text=${encodedWhatsapp}" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-600 transition flex items-center gap-2">
                         <i class="fab fa-whatsapp"></i> Pedir

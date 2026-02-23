@@ -28,15 +28,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --michi-green: #18453B; /* Verde Spartan/Institucional */
-            --michi-coffee: #3E2723;
+            --michi-primary: #54372B; /* Brown */
+            --michi-dark: #221518;    /* Dark */
+            --michi-accent: #F7E1BC;  /* Beige */
         }
-        .bg-michi { background-color: var(--michi-green); }
-        .text-michi { color: var(--michi-green); }
+        .bg-michi { background-color: var(--michi-primary); }
+        .text-michi { color: var(--michi-primary); }
+        .bg-michi-dark { background-color: var(--michi-dark); }
+        .text-michi-dark { color: var(--michi-dark); }
+        .bg-michi-accent { background-color: var(--michi-accent); }
+        .text-michi-accent { color: var(--michi-accent); }
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-slate-50 font-sans">
+<body class="bg-[#FDFBF7] font-sans text-[#221518]">
 
 <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
@@ -51,15 +56,15 @@
         </button>
 
         <!-- Menú Desktop -->
-        <div class="hidden md:flex space-x-8 font-medium text-gray-600 items-center">
-            <a href="/index.html#experiencia" class="hover:text-michi transition">Experiencia</a>
+        <div class="hidden md:flex space-x-8 font-medium text-[#54372B] items-center">
+            <a href="/index.html#experiencia" class="hover:text-michi-dark transition">Experiencia</a>
             <a href="/menu.html" class="text-michi font-bold">Nuestra Carta</a>
-            <a href="/index.html#ubicacion" class="hover:text-michi transition">Visítanos</a>
+            <a href="/index.html#ubicacion" class="hover:text-michi-dark transition">Visítanos</a>
             <a href="https://www.facebook.com/michicafes" target="_blank" class="bg-michi text-white px-5 py-2 rounded-full text-sm font-bold hover:scale-105 transition">Comunidad Michi</a>
         </div>
 
         <!-- Menú Móvil (Oculto por defecto) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl font-medium text-gray-800 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 text-xl font-medium text-[#221518] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
             <a href="/index.html#experiencia" class="hover:text-michi transition mobile-link">Experiencia</a>
             <a href="/menu.html" class="text-michi font-bold mobile-link">Nuestra Carta</a>
             <a href="/index.html#ubicacion" class="hover:text-michi transition mobile-link">Visítanos</a>
@@ -71,10 +76,10 @@
 <header class="relative h-[50vh] flex items-center overflow-hidden">
     <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80"
          class="absolute inset-0 w-full h-full object-cover" alt="Carta Michi Cafe">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#221518]/80 to-transparent"></div>
 
     <div class="relative z-10 container mx-auto px-6 text-white text-center">
-        <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Sabores Auténticos</span>
+        <span class="bg-michi-accent text-[#221518] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Sabores Auténticos</span>
         <h1 class="text-5xl md:text-6xl font-bold mt-4 leading-tight">Nuestra Carta</h1>
         <p class="mt-4 text-lg md:text-xl max-w-xl mx-auto text-gray-200">
             Una selección especial de cafés de origen, bebidas refrescantes y postres hechos con amor.
@@ -91,13 +96,13 @@
                 <div class="bg-michi text-white p-3 rounded-full mr-4">
                     <i class="fas fa-mug-hot text-xl"></i>
                 </div>
-                <h2 class="text-3xl font-bold text-gray-800">Cafés Calientes</h2>
+                <h2 class="text-3xl font-bold text-[#221518]">Cafés Calientes</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Espresso</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Intenso y puro. La esencia del café.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Espresso</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Intenso y puro. La esencia del café.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 6.00</span>
@@ -106,8 +111,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Americano</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Espresso diluido en agua caliente.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Americano</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Espresso diluido en agua caliente.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 7.00</span>
@@ -116,8 +121,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Cappuccino</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Espresso, leche vaporizada y espuma.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Cappuccino</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Espresso, leche vaporizada y espuma.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
@@ -126,8 +131,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Mocaccino</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Espresso, chocolate y leche.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Mocaccino</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Espresso, chocolate y leche.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
@@ -136,8 +141,8 @@
                 </div>
                  <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Latte</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Espresso con abundante leche cremosa.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Latte</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Espresso con abundante leche cremosa.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
@@ -146,8 +151,8 @@
                 </div>
                  <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Michi Especial</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Nuestra mezcla secreta con un toque de caramelo.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Michi Especial</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Nuestra mezcla secreta con un toque de caramelo.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 12.00</span>
@@ -160,16 +165,16 @@
         <!-- Categoría: Bebidas Frías -->
         <div class="mb-16">
             <div class="flex items-center mb-8">
-                <div class="bg-yellow-500 text-white p-3 rounded-full mr-4">
+                <div class="bg-michi-accent text-[#221518] p-3 rounded-full mr-4">
                     <i class="fas fa-glass-whiskey text-xl"></i>
                 </div>
-                <h2 class="text-3xl font-bold text-gray-800">Bebidas Frías</h2>
+                <h2 class="text-3xl font-bold text-[#221518]">Bebidas Frías</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Iced Latte</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Refrescante café con leche y hielo.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Iced Latte</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Refrescante café con leche y hielo.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
@@ -178,8 +183,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Frappuccino</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Café helado batido con crema.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Frappuccino</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Café helado batido con crema.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 12.00</span>
@@ -188,8 +193,8 @@
                 </div>
                  <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Limonada Frozen</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Clásica o con hierbabuena.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Limonada Frozen</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Clásica o con hierbabuena.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 8.00</span>
@@ -198,8 +203,8 @@
                 </div>
                  <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Milkshake de Oreo</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Batido cremoso con galletas Oreo.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Milkshake de Oreo</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Batido cremoso con galletas Oreo.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 13.00</span>
@@ -215,13 +220,13 @@
                 <div class="bg-michi text-white p-3 rounded-full mr-4">
                     <i class="fas fa-birthday-cake text-xl"></i>
                 </div>
-                <h2 class="text-3xl font-bold text-gray-800">Postres</h2>
+                <h2 class="text-3xl font-bold text-[#221518]">Postres</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Cheesecake de Maracuyá</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Suave y con el toque ácido perfecto.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Cheesecake de Maracuyá</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Suave y con el toque ácido perfecto.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
@@ -230,8 +235,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Torta de Chocolate</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Húmeda y con abundante fudge.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Torta de Chocolate</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Húmeda y con abundante fudge.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 11.00</span>
@@ -240,8 +245,8 @@
                 </div>
                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Pie de Limón</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Clásico postre con merengue.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Pie de Limón</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Clásico postre con merengue.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
@@ -250,8 +255,8 @@
                 </div>
                  <div class="flex justify-between items-start border-b border-gray-100 pb-3">
                     <div class="pr-4">
-                        <h3 class="font-bold text-lg text-gray-800">Galletas Michi</h3>
-                        <p class="text-gray-500 text-sm leading-tight">Galletas de mantequilla con forma de gato.</p>
+                        <h3 class="font-bold text-lg text-[#221518]">Galletas Michi</h3>
+                        <p class="text-[#54372B] text-sm leading-tight">Galletas de mantequilla con forma de gato.</p>
                     </div>
                     <div class="flex flex-col items-end">
                         <span class="font-bold text-michi whitespace-nowrap">S/ 3.00</span>
@@ -264,13 +269,13 @@
     </div>
 </section>
 
-<footer id="ubicacion" class="bg-white pt-16 pb-8 border-t">
+<footer id="ubicacion" class="bg-[#221518] text-white pt-16 pb-8 border-t border-[#54372B]">
     <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
         <div>
-            <h4 class="font-bold text-lg mb-4 text-michi font-bold">Encuéntranos</h4>
-            <p class="text-gray-600 mb-2 italic">"El rincón favorito de los gatos y el buen café"</p>
-            <p class="text-gray-800 font-medium"><i class="fas fa-map-marker-alt mr-2 text-michi"></i> Jr. Guillermo Urrelo 1628, Cajamarca, Perú.</p>
-            <p class="text-gray-800 mt-2 font-medium"><i class="fas fa-clock mr-2 text-michi"></i> Lun - Sáb: 9:00 AM - 9:00 PM</p>
+            <h4 class="font-bold text-lg mb-4 text-michi-accent font-bold">Encuéntranos</h4>
+            <p class="text-gray-300 mb-2 italic">"El rincón favorito de los gatos y el buen café"</p>
+            <p class="text-white font-medium"><i class="fas fa-map-marker-alt mr-2 text-michi-accent"></i> Jr. Guillermo Urrelo 1628, Cajamarca, Perú.</p>
+            <p class="text-white mt-2 font-medium"><i class="fas fa-clock mr-2 text-michi-accent"></i> Lun - Sáb: 9:00 AM - 9:00 PM</p>
         </div>
         <div class="text-right">
             <p class="text-sm text-gray-400">© 2026 Michi Café. Cajamarca, Perú.</p>

@@ -71,66 +71,12 @@
                 <h2 class="text-3xl font-bold text-[#221518]">Cafés Calientes</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Espresso</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Intenso y puro. La esencia del café.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 6.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Espresso" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Americano</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Espresso diluido en agua caliente.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 7.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Americano" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Cappuccino</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Espresso, leche vaporizada y espuma.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Cappuccino" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Mocaccino</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Espresso, chocolate y leche.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Mocaccino" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Latte</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Espresso con abundante leche cremosa.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Latte" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Michi Especial</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Nuestra mezcla secreta con un toque de caramelo.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 12.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Michi%20Especial" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
+                <michi-menu-item name="Espresso" description="Intenso y puro. La esencia del café." price="6.00"></michi-menu-item>
+                <michi-menu-item name="Americano" description="Espresso diluido en agua caliente." price="7.00"></michi-menu-item>
+                <michi-menu-item name="Cappuccino" description="Espresso, leche vaporizada y espuma." price="9.00"></michi-menu-item>
+                <michi-menu-item name="Mocaccino" description="Espresso, chocolate y leche." price="10.00"></michi-menu-item>
+                <michi-menu-item name="Latte" description="Espresso con abundante leche cremosa." price="9.00"></michi-menu-item>
+                <michi-menu-item name="Michi Especial" description="Nuestra mezcla secreta con un toque de caramelo." price="12.00"></michi-menu-item>
             </div>
         </div>
 
@@ -143,46 +89,10 @@
                 <h2 class="text-3xl font-bold text-[#221518]">Bebidas Frías</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Iced Latte</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Refrescante café con leche y hielo.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Iced%20Latte" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Frappuccino</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Café helado batido con crema.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 12.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Frappuccino" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Limonada Frozen</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Clásica o con hierbabuena.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 8.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20una%20Limonada%20Frozen" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Milkshake de Oreo</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Batido cremoso con galletas Oreo.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 13.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Milkshake%20de%20Oreo" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
+                <michi-menu-item name="Iced Latte" description="Refrescante café con leche y hielo." price="10.00"></michi-menu-item>
+                <michi-menu-item name="Frappuccino" description="Café helado batido con crema." price="12.00"></michi-menu-item>
+                <michi-menu-item name="Limonada Frozen" description="Clásica o con hierbabuena." price="8.00"></michi-menu-item>
+                <michi-menu-item name="Milkshake de Oreo" description="Batido cremoso con galletas Oreo." price="13.00"></michi-menu-item>
             </div>
         </div>
 
@@ -195,46 +105,10 @@
                 <h2 class="text-3xl font-bold text-[#221518]">Postres</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Cheesecake de Maracuyá</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Suave y con el toque ácido perfecto.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 10.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Cheesecake%20de%20Maracuy%C3%A1" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Torta de Chocolate</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Húmeda y con abundante fudge.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 11.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20una%20Torta%20de%20Chocolate" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Pie de Limón</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Clásico postre con merengue.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 9.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20un%20Pie%20de%20Lim%C3%B3n" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
-                 <div class="flex justify-between items-start border-b border-gray-100 pb-3">
-                    <div class="pr-4">
-                        <h3 class="font-bold text-lg text-[#221518]">Galletas Michi</h3>
-                        <p class="text-[#54372B] text-sm leading-tight">Galletas de mantequilla con forma de gato.</p>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="font-bold text-michi whitespace-nowrap">S/ 3.00</span>
-                        <a href="https://wa.me/51976622179?text=Hola%20Michi%20Caf%C3%A9%2C%20quisiera%20pedir%20Galletas%20Michi" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
-                    </div>
-                </div>
+                <michi-menu-item name="Cheesecake de Maracuyá" description="Suave y con el toque ácido perfecto." price="10.00"></michi-menu-item>
+                <michi-menu-item name="Torta de Chocolate" description="Húmeda y con abundante fudge." price="11.00"></michi-menu-item>
+                <michi-menu-item name="Pie de Limón" description="Clásico postre con merengue." price="9.00"></michi-menu-item>
+                <michi-menu-item name="Galletas Michi" description="Galletas de mantequilla con forma de gato." price="3.00"></michi-menu-item>
             </div>
         </div>
 

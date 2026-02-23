@@ -73,6 +73,7 @@ class MichiFooter extends HTMLElement {
                 </div>
                 <div class="text-right">
                     <p class="text-sm text-gray-400">© 2026 Michi Café. Cajamarca, Perú.</p>
+                    <p class="text-xs text-gray-500 mt-1">Estrategia Digital SOSTAC Fase I.</p>
                 </div>
             </div>
         </footer>
@@ -80,5 +81,58 @@ class MichiFooter extends HTMLElement {
     }
 }
 
+class MichiMenuItem extends HTMLElement {
+    connectedCallback() {
+        const name = this.getAttribute('name');
+        const description = this.getAttribute('description');
+        const price = this.getAttribute('price');
+        const whatsapp = this.getAttribute('whatsapp') || `Hola Michi Café, quisiera pedir un ${name}`;
+        const encodedWhatsapp = encodeURIComponent(whatsapp);
+
+        this.innerHTML = `
+        <div class="flex justify-between items-start border-b border-gray-100 pb-3">
+            <div class="pr-4">
+                <h3 class="font-bold text-lg text-[#221518]">${name}</h3>
+                <p class="text-[#54372B] text-sm leading-tight">${description}</p>
+            </div>
+            <div class="flex flex-col items-end">
+                <span class="font-bold text-michi whitespace-nowrap">S/ ${price}</span>
+                <a href="https://wa.me/51976622179?text=${encodedWhatsapp}" target="_blank" class="text-xs text-green-600 hover:underline mt-1"><i class="fab fa-whatsapp"></i> Pedir</a>
+            </div>
+        </div>
+        `;
+    }
+}
+
+class MichiProductCard extends HTMLElement {
+    connectedCallback() {
+        const image = this.getAttribute('image');
+        const title = this.getAttribute('title');
+        const description = this.getAttribute('description');
+        const whatsapp = this.getAttribute('whatsapp') || `Hola Michi Café, quisiera pedir un ${title}`;
+        const encodedWhatsapp = encodeURIComponent(whatsapp);
+
+        this.innerHTML = `
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition group" data-aos="fade-up">
+            <div class="h-64 bg-gray-200 relative overflow-hidden">
+                <img src="${image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="${title}" loading="lazy">
+            </div>
+            <div class="p-8">
+                <h3 class="text-xl font-bold mb-2 text-[#221518]">${title}</h3>
+                <p class="text-[#54372B] mb-4">${description}</p>
+                <div class="flex justify-between items-center">
+                    <a href="/menu.html" class="text-michi font-bold hover:underline text-sm">Ver en carta →</a>
+                    <a href="https://wa.me/51976622179?text=${encodedWhatsapp}" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-600 transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Pedir
+                    </a>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+}
+
 customElements.define('michi-nav', MichiNav);
 customElements.define('michi-footer', MichiFooter);
+customElements.define('michi-menu-item', MichiMenuItem);
+customElements.define('michi-product-card', MichiProductCard);

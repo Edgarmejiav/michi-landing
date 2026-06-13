@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 const menuData = [
   {
     h2: "Cafés de Especialidad",
+    descripcion: "Café de especialidad en Cajamarca. Carta de cafés clásicos y especialidades de la casa elaborados con granos de origen local y métodos de extracción artesanal en nuestra cafetería en Cajamarca.",
     subcategorias: [
       {
         h3: "Cafés Clásicos",
@@ -57,6 +58,7 @@ const menuData = [
   },
   {
     h2: "Bebidas Frías y Refrescantes",
+    descripcion: "Bebidas frías, lattes helados y frappés en Cajamarca. Variedad de bebidas refrescantes con café de origen y opciones sin cafeína en el centro de Cajamarca.",
     subcategorias: [
       {
         h3: "Café Frío y Frappés",
@@ -84,6 +86,7 @@ const menuData = [
   },
   {
     h2: "Infusiones y Bebidas Sin Cafeína",
+    descripcion: "Infusiones naturales y tés frutales en Cajamarca. Selección de bebidas calientes herbales y opciones sin cafeína ideales para el clima de Cajamarca.",
     subcategorias: [
       {
         h3: "Infusiones Calientes",
@@ -114,9 +117,11 @@ const menuData = [
   },
   {
     h2: "Nuestra Cocina: Dulces y Salados",
+    descripcion: "Sándwiches artesanales, repostería y postres en Cajamarca. Cocina de especialidad con ingredientes locales en nuestra cafetería de Cajamarca.",
     subcategorias: [
       {
         h3: "Sándwiches y Rapiditas",
+        descripcion: "Sándwiches, paninis y bocadillos salados en Cajamarca. Carta de sándwiches calientes, triples tradicionales y snacks preparados con ingredientes locales en Cajamarca.",
         notas: "¡Tu sandwich puede hacerse con pan de MASA MADRE por tan solo S/. 2.00!",
         productos: [
           { nombre: "Sandwich de Pollo", descripcion: "(Pan Ciabatta + pollo al horno sabor leña + cremas a gusto)", precio: "S/. 4.00" },
@@ -133,6 +138,7 @@ const menuData = [
       },
       {
         h3: "Waffles y Postres Artesanales",
+        descripcion: "Repostería artesanal, tortas y postres en Cajamarca. Variedad de dulces temáticos, waffles y pastelería fina disponibles en nuestra cafetería de Cajamarca.",
         notas: "Pregunta por el postre del día",
         productos: [
           { nombre: "Berries Wafles", descripcion: "2 unid (fresas + arándanos + miel o chocolate)", precio: "" },
@@ -182,12 +188,18 @@ const menuData = [
           <div class="space-y-10">
             <h2 class="text-3xl font-serif text-stone-100 border-b border-accent/20 pb-4 flex items-center gap-4">
               <span class="w-2 h-2 bg-accent rounded-full"></span>
-              {seccion.h2}
+              <span class="sr-only">Cajamarca </span>{seccion.h2}
             </h2>
+            {seccion.descripcion && (
+              <p class="sr-only">{seccion.descripcion}</p>
+            )}
             <div class="space-y-8">
               {seccion.subcategorias.map((sub) => (
                 <div>
-                  <h3 class="text-xl font-medium text-accent/90 mb-4">{sub.h3}</h3>
+                  <h3 class="text-xl font-medium text-accent/90 mb-4"><span class="sr-only">Cajamarca </span>{sub.h3}</h3>
+                  {sub.descripcion && (
+                    <p class="sr-only">{sub.descripcion}</p>
+                  )}
                   {sub.notas && (
                     <p class="text-accent/70 text-sm italic -mt-2 mb-4">{sub.notas}</p>
                   )}

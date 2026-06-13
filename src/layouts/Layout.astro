@@ -4,9 +4,17 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
 }
 
-const { title, description = "Michi Café – Mucho más que solo café. Café de especialidad y experiencia gourmet en el corazón de Cajamarca." } = Astro.props;
+const {
+	title,
+	description = "Michi Café – Café de especialidad y experiencia gourmet en el corazón de Cajamarca.",
+	image = "/Cappuccino.png"
+} = Astro.props;
+
+const url = "https://michicafe.com";
+const siteName = "Michi Café";
 ---
 
 <!doctype html>
@@ -15,15 +23,53 @@ const { title, description = "Michi Café – Mucho más que solo café. Café d
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="canonical" href={url + Astro.url.pathname} />
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Open Graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:image" content={url + image} />
+		<meta property="og:url" content={url + Astro.url.pathname} />
 		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={url + image} />
 
 		<title>{title}</title>
+
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Restaurant",
+			"name": "Michi Café",
+			"description": "Café de especialidad y experiencia gourmet en Cajamarca.",
+			"url": url,
+			"telephone": "+51-976-622-179",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Jr. Guillermo Urrelo 1628",
+				"addressLocality": "Cajamarca",
+				"addressCountry": "PE"
+			},
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+					"opens": "09:00",
+					"closes": "21:00"
+				}
+			],
+			"servesCuisine": "Café de especialidad",
+			"image": url + "/og-image.png",
+			"priceRange": "S/"
+		})} />
 	</head>
 	<body class="overflow-x-hidden">
 		<slot />

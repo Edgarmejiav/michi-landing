@@ -1,0 +1,97 @@
+---
+---
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="relative z-50 flex items-center gap-3 group">
+        <span class="text-2xl font-display tracking-[0.25em] text-cream group-hover:text-accent transition-colors duration-300">MICHI</span>
+        <span class="w-px h-5 bg-gold/30"></span>
+        <span class="text-xs font-sans font-light tracking-[0.4em] text-gold/60 uppercase">Café</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-12">
+        <a href="#inicio" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Inicio</a>
+        <a href="#menu" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Menú</a>
+        <a href="#experiencia" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Experiencia</a>
+        <a href="#eventos" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Eventos</a>
+        <a href="#reservar" class="ml-4 px-6 py-2.5 border border-accent/40 text-accent text-xs tracking-[0.2em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300 rounded-none">Reservar</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-toggle" class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center" aria-label="Abrir menú">
+        <div class="hamburger-lines">
+          <span class="block w-6 h-px bg-cream transition-all duration-300 origin-center"></span>
+          <span class="block w-4 h-px bg-cream mt-1.5 transition-all duration-300 origin-center ml-auto"></span>
+          <span class="block w-6 h-px bg-cream mt-1.5 transition-all duration-300 origin-center"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-mocha/98 backdrop-blur-xl z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+    <div class="flex flex-col items-center gap-10">
+      <a href="#inicio" class="mobile-link text-3xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Inicio</a>
+      <a href="#menu" class="mobile-link text-3xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Menú</a>
+      <a href="#experiencia" class="mobile-link text-3xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Experiencia</a>
+      <a href="#eventos" class="mobile-link text-3xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Eventos</a>
+      <div class="w-12 h-px bg-accent/30 my-2"></div>
+      <a href="#reservar" class="px-10 py-3 border border-accent/40 text-accent text-sm tracking-[0.3em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300">Reservar Mesa</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Navbar scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('bg-mocha/90', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+    } else {
+      nav?.classList.remove('bg-mocha/90', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+    }
+  });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const lines = toggle?.querySelectorAll('.hamburger-lines span');
+  const mobileLinks = mobileMenu?.querySelectorAll('.mobile-link');
+  let isOpen = false;
+
+  toggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    if (isOpen) {
+      mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.add('opacity-100', 'pointer-events-auto');
+      if (lines) {
+        lines[0].style.transform = 'rotate(45deg) translateY(5px)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'rotate(-45deg) translateY(-5px)';
+      }
+      document.body.style.overflow = 'hidden';
+    } else {
+      closeMobileMenu();
+    }
+  });
+
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      isOpen = false;
+      closeMobileMenu();
+    });
+  });
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+    mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
+    if (lines) {
+      lines[0].style.transform = '';
+      lines[1].style.opacity = '1';
+      lines[2].style.transform = '';
+    }
+    document.body.style.overflow = '';
+  }
+</script>

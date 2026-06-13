@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://michicafe.com/sitemap-index.xml

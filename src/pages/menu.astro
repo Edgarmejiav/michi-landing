@@ -44,7 +44,7 @@ const menuData = {
     {
       seccion: "WAFLES",
       productos: [
-        { nombre: "Berries Wafles", descripcion: "2 unid (fresas + arándanos + miel o chocolate)", precio: "No especificado" }
+        { nombre: "Berries Wafles", descripcion: "2 unid (fresas + arándanos + miel o chocolate)", precio: "" }
       ]
     },
     {
@@ -178,7 +178,7 @@ const menuData = {
                 <div class="group border-b border-white/5 pb-6 hover:border-accent/30 transition duration-300">
                   <div class="flex justify-between items-baseline gap-3 mb-2">
                     <h3 class="text-xl font-medium text-stone-200 group-hover:text-accent transition break-words">{item.nombre}</h3>
-                    <span class="text-accent font-bold">{item.precio}</span>
+                    {item.precio && <span class="text-accent font-bold">{item.precio}</span>}
                   </div>
                   {item.descripcion && (
                     <p class="text-stone-400 text-sm italic">{item.descripcion}</p>

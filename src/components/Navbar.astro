@@ -1,4 +1,7 @@
 ---
+const path = Astro.url.pathname;
+const isHome = path === '/' || path === '';
+const isMenu = path.startsWith('/menu');
 ---
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
@@ -12,12 +15,11 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center gap-10">
-        <a href="/menu" class="nav-link text-xs tracking-[0.3em] uppercase text-accent hover:text-accent transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Carta</a>
-        <a href="#inicio" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Inicio</a>
-        <a href="#menu" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Menú</a>
-        <a href="#experiencia" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Experiencia</a>
-        <a href="#eventos" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Eventos</a>
-        <a href="#reservar" class="ml-4 px-6 py-2.5 border border-accent/40 text-accent text-xs tracking-[0.2em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300 rounded-none">Reservar</a>
+        <a href="/menu" class={`nav-link text-xs tracking-[0.3em] uppercase transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${isMenu ? 'text-accent' : 'text-cream/50 hover:text-cream'}`}>Carta</a>
+        <a href="/#inicio" class={`nav-link text-xs tracking-[0.3em] uppercase transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${isHome ? 'text-accent' : 'text-cream/50 hover:text-cream'}`}>Inicio</a>
+        <a href="/#experiencia" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Experiencia</a>
+        <a href="/#eventos" class="nav-link text-xs tracking-[0.3em] uppercase text-cream/50 hover:text-cream transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-accent after:transition-all after:duration-300 hover:after:w-full">Eventos</a>
+        <a href="/#reservar" class="ml-4 px-6 py-2.5 border border-accent/40 text-accent text-xs tracking-[0.2em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300 rounded-none">Reservar</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -36,12 +38,11 @@
     <div class="flex flex-col items-center gap-8">
       <a href="/menu" class="mobile-link text-2xl font-display text-accent hover:text-accent transition-colors duration-300 tracking-wider">Carta Completa</a>
       <div class="w-16 h-px bg-accent/20"></div>
-      <a href="#inicio" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Inicio</a>
-      <a href="#menu" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Menú</a>
-      <a href="#experiencia" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Experiencia</a>
-      <a href="#eventos" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Eventos</a>
+      <a href="/#inicio" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Inicio</a>
+      <a href="/#experiencia" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Experiencia</a>
+      <a href="/#eventos" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Eventos</a>
       <div class="w-16 h-px bg-accent/20 my-2"></div>
-      <a href="#reservar" class="px-10 py-3 border border-accent/40 text-accent text-sm tracking-[0.3em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300">Reservar Mesa</a>
+      <a href="/#reservar" class="px-10 py-3 border border-accent/40 text-accent text-sm tracking-[0.3em] uppercase hover:bg-accent hover:text-mocha transition-all duration-300">Reservar Mesa</a>
     </div>
   </div>
 </nav>

@@ -3,138 +3,152 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const menuData = {
-  restaurante: "Michi Café",
-  categorias: [
-    {
-      seccion: "CLÁSICOS",
-      productos: [
-        { nombre: "Espresso", precio: "S/. 4.50" },
-        { nombre: "Doppio", precio: "S/. 5.50" },
-        { nombre: "Macchiato", precio: "S/. 6.00" },
-        { nombre: "Americano", precio: "S/. 5.50" },
-        { nombre: "Flat white", precio: "S/. 7.00" },
-        { nombre: "Cappuccino", precio: "S/. 7.00" },
-        { nombre: "Latte", precio: "S/. 7.50" }
-      ]
-    },
-    {
-      seccion: "SIN CAFEÍNA",
-      productos: [
-        { nombre: "Choco latte", descripcion: "(con o sin leche)", precio: "S/. 6.50" },
-        { nombre: "Batido de fresa", descripcion: "(leche + fresas)", precio: "S/. 7.00" },
-        { nombre: "Batido de arándanos", descripcion: "(leche + arándanos)", precio: "S/. 9.00" },
-        { nombre: "Batido de chocolate", descripcion: "(chocolate + plátano + leche)", precio: "S/. 7.00" },
-        { nombre: "PARA NIÑOS BABYCCINO", descripcion: "(Leche texturizada + galleta óreo)", precio: "S/. 7.00" }
-      ]
-    },
-    {
-      seccion: "INFUSIONES",
-      productos: [
-        { nombre: "Frutos Rojos", precio: "S/. 3.00" },
-        { nombre: "Manzana canela", precio: "S/. 3.00" },
-        { nombre: "Citrus, jengibre", precio: "S/. 3.00" },
-        { nombre: "Jamaica, regaliz, manzana", precio: "S/. 3.00" },
-        { nombre: "Naranja, canela", precio: "S/. 3.00" },
-        { nombre: "Durazno jamaica", precio: "S/. 3.00" },
-        { nombre: "Té verde", precio: "S/. 3.00" },
-        { nombre: "Manzanilla, anis o hierba Luisa", precio: "S/. 3.00" }
-      ]
-    },
-    {
-      seccion: "WAFLES",
-      productos: [
-        { nombre: "Berries Wafles", descripcion: "2 unid (fresas + arándanos + miel o chocolate)", precio: "" }
-      ]
-    },
-    {
-      seccion: "SANDWICHES",
-      notas: "¡Tu sandwich puede hacerse con pan de MASA MADRE por tan solo S/. 2.00!",
-      productos: [
-        { nombre: "Sandwich de Pollo", descripcion: "(Pan Ciabatta + pollo al horno sabor leña + cremas a gusto)", precio: "S/. 4.00" },
-        { nombre: "Sandwich de Queso", descripcion: "(Pan Ciabatta + queso edam ó mozzarella ó fresco)", precio: "S/. 4.00" },
-        { nombre: "Sandwich de Palta", descripcion: "(Pan Ciabatta + palta + tomatitos cherry)", precio: "S/. 4.00" },
-        { nombre: "Sandwich de Jamón y queso", descripcion: "(Pan Ciabatta + queso edam ó mozzarella + orégano)", precio: "S/. 5.00" },
-        { nombre: "Sandwich de palta y queso", descripcion: "(Pan Ciabatta + queso tipo suizo o queso crema + palta + especias)", precio: "S/. 5.00" },
-        { nombre: "Michi panini con pollo", descripcion: "(Pan Ciabatta + queso mozzarella + pollo + albahaca + tomatitos cherry)", precio: "S/. 5.50" },
-        { nombre: "Triple Clásico", descripcion: "(3 Panes de molde + queso + jamón)", precio: "S/. 6.00" },
-        { nombre: "Triple Completo", descripcion: "(4 Panes de molde + pollo al horno + queso + jamón)", precio: "S/. 7.50" }
-      ]
-    },
-    {
-      seccion: "RAPIDITAS",
-      productos: [
-        { nombre: "Pollo y queso", descripcion: "(2 unid de Tortillas clásicas o integrales)", precio: "S/. 5.50" },
-        { nombre: "Jamón y queso", descripcion: "(2 unid de Tortillas clásicas o integrales)", precio: "S/. 5.50" }
-      ]
-    },
-    {
-      seccion: "CAFÉ ESPECIALES",
-      productos: [
-        { nombre: "Café bombón", precio: "S/. 8.00" },
-        { nombre: "Mochaccino", precio: "S/. 9.00" },
-        { nombre: "Cappuccino Caramel", precio: "S/. 9.00" },
-        { nombre: "Cappuccino vainilla", precio: "S/. 9.00" },
-        { nombre: "Cappuccino Maracumiaw", precio: "S/. 9.00" },
-        { nombre: "Capuccino Mango", precio: "S/. 9.00" },
-        { nombre: "Cappuccino avellanas", precio: "S/. 9.00" },
-        { nombre: "Cappuccino Cajamarquino", precio: "S/. 9.00" },
-        { nombre: "Cappuccino menta", precio: "S/. 9.00" },
-        { nombre: "Cappuccino algarrobina", precio: "S/. 9.00" },
-        { nombre: "Mocha Latte", precio: "S/. 9.50" },
-        { nombre: "Latte caramel", precio: "S/. 9.50" },
-        { nombre: "Vainilla Latte", precio: "S/. 9.50" },
-        { nombre: "Latte maracumiaw", precio: "S/. 9.50" },
-        { nombre: "Latte mango", precio: "S/. 9.50" },
-        { nombre: "Latte avellanas", precio: "S/. 9.50" },
-        { nombre: "Café vietnamita", precio: "S/. 9.00" }
-      ]
-    },
-    {
-      seccion: "POSTRES",
-      notas: "Pregunta por el postre del día",
-      productos: [
-        { nombre: "Torta de Chocolate", precio: "S/. 5.50" },
-        { nombre: "Tres leches de café", precio: "S/. 5.50" },
-        { nombre: "Pie de limón ó Maracuyá", precio: "S/. 5.50" },
-        { nombre: "Michi tiramisú", precio: "S/. 5.50" },
-        { nombre: "Cheesecake de fresa, Maracuyá, café", precio: "S/. 5.50" }
-      ]
-    },
-    {
-      seccion: "BEBIDAS FRÍAS",
-      productos: [
-        { nombre: "Affogato", descripcion: "Helado de vainilla con espress", precio: "S/. 8.50" },
-        { nombre: "Citrus coffee", descripcion: "(Naranja o maracuyá)", precio: "S/. 8.50" },
-        { nombre: "Iced Americano", precio: "S/. 5.50" },
-        { nombre: "Iced cappuccino", precio: "S/. 7.00" },
-        { nombre: "Iced latte", precio: "S/. 7.50" },
-        { nombre: "Frappés", descripcion: "(chocolate, caramelo, óreo, chocoavellana, vainilla francesa, manjar blanco, fresa)", precio: "S/. 11.50" }
-      ]
-    },
-    {
-      seccion: "SIN CAFEÍNA (Bebidas Frías)",
-      productos: [
-        { nombre: "Tropical michi Blueberry", precio: "S/. 7.50" },
-        { nombre: "Tropical michi strawberry", precio: "S/. 7.50" },
-        { nombre: "Tropical michi", precio: "S/. 7.50" },
-        { nombre: "Infusiones frías", precio: "S/. 3.00" }
-      ]
-    },
-    {
-      seccion: "MÉTODOS",
-      productos: [
-        { nombre: "Extracción en prensa francesa", descripcion: "3 tazas 120ml", precio: "S/. 15.00" },
-        { nombre: "Extracción por V60", descripcion: "2 tazas 120ml", precio: "S/. 15.00" },
-        { nombre: "Aeropress", descripcion: "2 tazas 120ml", precio: "S/. 15.00" },
-        { nombre: "Moka Italiana", descripcion: "3 tazas", precio: "S/. 15.00" }
-      ]
-    }
-  ]
-};
+const menuData = [
+  {
+    h2: "Cafés de Especialidad",
+    subcategorias: [
+      {
+        h3: "Cafés Clásicos",
+        notas: "",
+        productos: [
+          { nombre: "Espresso", precio: "S/. 4.50" },
+          { nombre: "Doppio", precio: "S/. 5.50" },
+          { nombre: "Macchiato", precio: "S/. 6.00" },
+          { nombre: "Americano", precio: "S/. 5.50" },
+          { nombre: "Flat white", precio: "S/. 7.00" },
+          { nombre: "Cappuccino", precio: "S/. 7.00" },
+          { nombre: "Latte", precio: "S/. 7.50" }
+        ]
+      },
+      {
+        h3: "Cafés Especiales de la Casa",
+        notas: "",
+        productos: [
+          { nombre: "Café bombón", precio: "S/. 8.00" },
+          { nombre: "Mochaccino", precio: "S/. 9.00" },
+          { nombre: "Cappuccino Caramel", precio: "S/. 9.00" },
+          { nombre: "Cappuccino vainilla", precio: "S/. 9.00" },
+          { nombre: "Cappuccino Maracumiaw", precio: "S/. 9.00" },
+          { nombre: "Capuccino Mango", precio: "S/. 9.00" },
+          { nombre: "Cappuccino avellanas", precio: "S/. 9.00" },
+          { nombre: "Cappuccino Cajamarquino", precio: "S/. 9.00" },
+          { nombre: "Cappuccino menta", precio: "S/. 9.00" },
+          { nombre: "Cappuccino algarrobina", precio: "S/. 9.00" },
+          { nombre: "Mocha Latte", precio: "S/. 9.50" },
+          { nombre: "Latte caramel", precio: "S/. 9.50" },
+          { nombre: "Vainilla Latte", precio: "S/. 9.50" },
+          { nombre: "Latte maracumiaw", precio: "S/. 9.50" },
+          { nombre: "Latte mango", precio: "S/. 9.50" },
+          { nombre: "Latte avellanas", precio: "S/. 9.50" },
+          { nombre: "Café vietnamita", precio: "S/. 9.00" }
+        ]
+      },
+      {
+        h3: "Métodos de Extracción Artesanal",
+        notas: "",
+        productos: [
+          { nombre: "Extracción en prensa francesa", descripcion: "3 tazas 120ml", precio: "S/. 15.00" },
+          { nombre: "Extracción por V60", descripcion: "2 tazas 120ml", precio: "S/. 15.00" },
+          { nombre: "Aeropress", descripcion: "2 tazas 120ml", precio: "S/. 15.00" },
+          { nombre: "Moka Italiana", descripcion: "3 tazas", precio: "S/. 15.00" }
+        ]
+      }
+    ]
+  },
+  {
+    h2: "Bebidas Frías y Refrescantes",
+    subcategorias: [
+      {
+        h3: "Café Frío y Frappés",
+        notas: "",
+        productos: [
+          { nombre: "Affogato", descripcion: "Helado de vainilla con espress", precio: "S/. 8.50" },
+          { nombre: "Citrus coffee", descripcion: "(Naranja o maracuyá)", precio: "S/. 8.50" },
+          { nombre: "Iced Americano", precio: "S/. 5.50" },
+          { nombre: "Iced cappuccino", precio: "S/. 7.00" },
+          { nombre: "Iced latte", precio: "S/. 7.50" },
+          { nombre: "Frappés", descripcion: "(chocolate, caramelo, óreo, chocoavellana, vainilla francesa, manjar blanco, fresa)", precio: "S/. 11.50" }
+        ]
+      },
+      {
+        h3: "Bebidas Frías Sin Cafeína",
+        notas: "",
+        productos: [
+          { nombre: "Tropical michi Blueberry", precio: "S/. 7.50" },
+          { nombre: "Tropical michi strawberry", precio: "S/. 7.50" },
+          { nombre: "Tropical michi", precio: "S/. 7.50" },
+          { nombre: "Infusiones frías", precio: "S/. 3.00" }
+        ]
+      }
+    ]
+  },
+  {
+    h2: "Infusiones y Bebidas Sin Cafeína",
+    subcategorias: [
+      {
+        h3: "Infusiones Calientes",
+        notas: "",
+        productos: [
+          { nombre: "Frutos Rojos", precio: "S/. 3.00" },
+          { nombre: "Manzana canela", precio: "S/. 3.00" },
+          { nombre: "Citrus, jengibre", precio: "S/. 3.00" },
+          { nombre: "Jamaica, regaliz, manzana", precio: "S/. 3.00" },
+          { nombre: "Naranja, canela", precio: "S/. 3.00" },
+          { nombre: "Durazno jamaica", precio: "S/. 3.00" },
+          { nombre: "Té verde", precio: "S/. 3.00" },
+          { nombre: "Manzanilla, anis o hierba Luisa", precio: "S/. 3.00" }
+        ]
+      },
+      {
+        h3: "Bebidas Sin Cafeína",
+        notas: "",
+        productos: [
+          { nombre: "Choco latte", descripcion: "(con o sin leche)", precio: "S/. 6.50" },
+          { nombre: "Batido de fresa", descripcion: "(leche + fresas)", precio: "S/. 7.00" },
+          { nombre: "Batido de arándanos", descripcion: "(leche + arándanos)", precio: "S/. 9.00" },
+          { nombre: "Batido de chocolate", descripcion: "(chocolate + plátano + leche)", precio: "S/. 7.00" },
+          { nombre: "PARA NIÑOS BABYCCINO", descripcion: "(Leche texturizada + galleta óreo)", precio: "S/. 7.00" }
+        ]
+      }
+    ]
+  },
+  {
+    h2: "Nuestra Cocina: Dulces y Salados",
+    subcategorias: [
+      {
+        h3: "Sándwiches y Rapiditas",
+        notas: "¡Tu sandwich puede hacerse con pan de MASA MADRE por tan solo S/. 2.00!",
+        productos: [
+          { nombre: "Sandwich de Pollo", descripcion: "(Pan Ciabatta + pollo al horno sabor leña + cremas a gusto)", precio: "S/. 4.00" },
+          { nombre: "Sandwich de Queso", descripcion: "(Pan Ciabatta + queso edam ó mozzarella ó fresco)", precio: "S/. 4.00" },
+          { nombre: "Sandwich de Palta", descripcion: "(Pan Ciabatta + palta + tomatitos cherry)", precio: "S/. 4.00" },
+          { nombre: "Sandwich de Jamón y queso", descripcion: "(Pan Ciabatta + queso edam ó mozzarella + orégano)", precio: "S/. 5.00" },
+          { nombre: "Sandwich de palta y queso", descripcion: "(Pan Ciabatta + queso tipo suizo o queso crema + palta + especias)", precio: "S/. 5.00" },
+          { nombre: "Michi panini con pollo", descripcion: "(Pan Ciabatta + queso mozzarella + pollo + albahaca + tomatitos cherry)", precio: "S/. 5.50" },
+          { nombre: "Triple Clásico", descripcion: "(3 Panes de molde + queso + jamón)", precio: "S/. 6.00" },
+          { nombre: "Triple Completo", descripcion: "(4 Panes de molde + pollo al horno + queso + jamón)", precio: "S/. 7.50" },
+          { nombre: "Pollo y queso", descripcion: "(2 unid de Tortillas clásicas o integrales)", precio: "S/. 5.50" },
+          { nombre: "Jamón y queso", descripcion: "(2 unid de Tortillas clásicas o integrales)", precio: "S/. 5.50" }
+        ]
+      },
+      {
+        h3: "Waffles y Postres Artesanales",
+        notas: "Pregunta por el postre del día",
+        productos: [
+          { nombre: "Berries Wafles", descripcion: "2 unid (fresas + arándanos + miel o chocolate)", precio: "" },
+          { nombre: "Torta de Chocolate", precio: "S/. 5.50" },
+          { nombre: "Tres leches de café", precio: "S/. 5.50" },
+          { nombre: "Pie de limón ó Maracuyá", precio: "S/. 5.50" },
+          { nombre: "Michi tiramisú", precio: "S/. 5.50" },
+          { nombre: "Cheesecake de fresa, Maracuyá, café", precio: "S/. 5.50" }
+        ]
+      }
+    ]
+  }
+];
 ---
 
-<Layout title="Nuestra Carta | Michi Café" description="Descubre todos los productos de Michi Café: cafés clásicos y especiales, infusiones, sandwiches, waffles, postres, bebidas frías y más. Café de especialidad en Cajamarca.">
+<Layout title="Nuestra Carta | Menú de Especialidades y Repostería Felina" description="Descubre todos los productos de Michi Café: cafés clásicos y especiales, infusiones, sandwiches, waffles, postres, bebidas frías y más. Café de especialidad en Cajamarca.">
   <Navbar />
   <main class="pt-32 pb-24 px-6 min-h-screen">
     <div class="container mx-auto max-w-4xl">
@@ -147,7 +161,7 @@ const menuData = {
       </nav>
 
       <div class="text-center mb-16 space-y-4">
-        <h1 class="text-5xl md:text-6xl font-serif text-accent">Nuestra Carta</h1>
+        <h1 class="text-5xl md:text-6xl font-serif text-accent">Nuestra Carta | Menú de Especialidades y Repostería Felina</h1>
         <p class="text-stone-400">Café de especialidad, infusiones, sandwiches, postres y más. Conoce todo lo que Michi Café tiene para ti en Cajamarca.</p>
       </div>
 
@@ -164,25 +178,32 @@ const menuData = {
       </script>
 
       <div class="space-y-16">
-        {menuData.categorias.map((cat) => (
-          <div class="space-y-8">
+        {menuData.map((seccion) => (
+          <div class="space-y-10">
             <h2 class="text-3xl font-serif text-stone-100 border-b border-accent/20 pb-4 flex items-center gap-4">
               <span class="w-2 h-2 bg-accent rounded-full"></span>
-              {cat.seccion}
+              {seccion.h2}
             </h2>
-            {cat.notas && (
-              <p class="text-accent/70 text-sm italic -mt-4">{cat.notas}</p>
-            )}
-            <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
-              {cat.productos.map((item) => (
-                <div class="group border-b border-white/5 pb-6 hover:border-accent/30 transition duration-300">
-                  <div class="flex justify-between items-baseline gap-3 mb-2">
-                    <h3 class="text-xl font-medium text-stone-200 group-hover:text-accent transition break-words">{item.nombre}</h3>
-                    {item.precio && <span class="text-accent font-bold">{item.precio}</span>}
-                  </div>
-                  {item.descripcion && (
-                    <p class="text-stone-400 text-sm italic">{item.descripcion}</p>
+            <div class="space-y-8">
+              {seccion.subcategorias.map((sub) => (
+                <div>
+                  <h3 class="text-xl font-medium text-accent/90 mb-4">{sub.h3}</h3>
+                  {sub.notas && (
+                    <p class="text-accent/70 text-sm italic -mt-2 mb-4">{sub.notas}</p>
                   )}
+                  <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                    {sub.productos.map((item) => (
+                      <div class="flex justify-between items-baseline gap-3 py-2 border-b border-white/5">
+                        <div>
+                          <strong class="text-stone-200">{item.nombre}</strong>
+                          {item.descripcion && (
+                            <span class="text-stone-400 text-sm italic ml-1">{item.descripcion}</span>
+                          )}
+                        </div>
+                        {item.precio && <span class="text-accent font-bold whitespace-nowrap">{item.precio}</span>}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

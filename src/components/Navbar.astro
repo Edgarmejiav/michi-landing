@@ -36,9 +36,9 @@ const isMenu = path.startsWith('/menu');
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="fixed inset-0 bg-mocha/98 backdrop-blur-xl z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
     <div class="flex flex-col items-center gap-8">
-      <a href="/menu" class="mobile-link text-2xl font-display text-accent hover:text-accent transition-colors duration-300 tracking-wider">Carta Completa</a>
+      <a href="/menu" class={`mobile-link text-2xl font-display transition-colors duration-300 tracking-wider ${isMenu ? 'text-accent' : 'text-accent hover:text-accent'}`}>Carta Completa</a>
       <div class="w-16 h-px bg-accent/20"></div>
-      <a href="/#inicio" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Inicio</a>
+      <a href="/#inicio" class={`mobile-link text-2xl font-display transition-colors duration-300 tracking-wider ${isHome ? 'text-accent' : 'text-cream/70 hover:text-accent'}`}>Inicio</a>
       <a href="/#experiencia" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Experiencia</a>
       <a href="/#eventos" class="mobile-link text-2xl font-display text-cream/70 hover:text-accent transition-colors duration-300 tracking-wider">Eventos</a>
       <div class="w-16 h-px bg-accent/20 my-2"></div>

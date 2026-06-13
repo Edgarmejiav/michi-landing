@@ -81,10 +81,10 @@ const menuRows = [
     <!-- Section Header -->
     <div class="text-center mb-24 lg:mb-32">
       <h2 class="text-5xl sm:text-6xl lg:text-7xl font-display italic text-cream tracking-wide">Menu</h2>
-      <div class="flex items-center justify-center gap-4 mt-6">
-        <div class="w-16 sm:w-20 h-px bg-gradient-to-r from-transparent to-gold/30 shrink-0"></div>
-        <a href="/menu" class="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-gold/50 hover:text-gold transition-colors duration-300 font-sans whitespace-nowrap">Ver carta completa</a>
-        <div class="w-16 sm:w-20 h-px bg-gradient-to-l from-transparent to-gold/30 shrink-0"></div>
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <div class="w-16 sm:w-20 h-px bg-gradient-to-r from-transparent to-accent/40 shrink-0"></div>
+        <a href="/menu" class="text-sm tracking-[0.3em] uppercase text-accent font-semibold hover:text-accent/80 transition-colors duration-300 font-sans whitespace-nowrap">Ver carta completa</a>
+        <div class="w-16 sm:w-20 h-px bg-gradient-to-l from-transparent to-accent/40 shrink-0"></div>
       </div>
     </div>
 
@@ -174,7 +174,7 @@ const menuRows = [
               <div class={`w-full lg:w-1/2 space-y-5 ${
                 item.position === 'image-left' ? 'lg:text-left' : 'lg:text-right'
               } text-center`}>
-                <h3 class="text-2xl sm:text-3xl font-display tracking-[0.15em] text-cream">{item.title}</h3>
+                <a href="/menu" class="inline-block text-2xl sm:text-3xl font-display tracking-[0.15em] text-cream hover:text-accent transition-colors duration-300">{item.title}</a>
                 <p class="text-sm leading-relaxed text-cream/35 max-w-md font-light mx-auto lg:mx-0" style={item.position === 'image-right' ? 'margin-left: auto;' : ''}>
                   {item.description}
                 </p>
